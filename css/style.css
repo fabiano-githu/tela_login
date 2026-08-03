@@ -1,0 +1,264 @@
+/*==========================================
+            STYLE RESET
+==========================================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/*==========================================
+            STYLE PRINCIPAL
+==========================================*/
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("../img/Captura de tela 2026-08-01 212613.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #2ab5ce;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+
+/*==========================================
+            WRAPPER
+==========================================*/
+.wrapper {
+    background-color: transparent;
+    max-width: 1200px;
+    height: 80vh;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+
+
+/*==========================================
+            TEXTO PRINCIPAL
+==========================================*/
+.container_texto_principal {
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transform: translateY(-20px);
+}
+
+
+/*==========================================
+            CONTAINER PRINCIPAL
+==========================================*/
+.container_principal {
+    width: 50%;
+    background-color:blue;
+    border-radius: 20px;
+    margin: 0 auto;
+
+}
+
+
+/*==========================================
+            FORMULÁRIO DE LOGIN
+==========================================*/
+
+/* Formulário de login */
+.formulario_login {
+    width: 100%;
+    padding: 180px 20px 20px;
+    position: relative;
+}
+
+
+/* Logo do formulário */
+.logo_login {
+
+    width: 300px;
+
+    height: auto;
+
+    object-fit: contain;
+
+    position: absolute;
+
+    top: 120px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+}
+
+/*==========================================
+            CONTAINER DOS INPUTS
+==========================================*/
+
+.container_input {
+    margin-bottom: 20px;
+    border-radius: 30px;
+}
+
+
+/*==========================================
+            LABEL DOS INPUTS
+==========================================*/
+
+.container_input label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+
+/*==========================================
+            INPUT COM ÍCONE
+==========================================*/
+
+.input_com_icone {
+    display: flex;
+    align-items: center;
+
+
+    border: 1px solid #14d3d3;
+    border-radius: 8px;
+
+}
+
+
+/*==========================================
+            INPUT
+==========================================*/
+
+.input_com_icone input {
+    flex: 1;
+
+    border: none;
+    outline: none;
+
+    font-size: 16px;
+
+    background:  blue;
+    color: #ffffff;
+    padding: 10px;
+}
+
+
+/* Placeholder */
+
+.input_com_icone input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/*==========================================
+            ÍCONES
+==========================================*/
+
+.input_com_icone i {
+    font-size: 20px;
+    color: #f6f5fa;
+    padding: 10px;
+}
+
+
+/*==========================================
+            OPÇÕES DE LOGIN
+==========================================*/
+
+.opcoes_login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin: 20px 0;
+}
+
+
+/*==========================================
+            LEMBRAR-ME
+==========================================*/
+
+.lembrar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    cursor: pointer;
+}
+
+
+/*==========================================
+            ESQUECI MINHA SENHA
+==========================================*/
+
+.opcoes_login a {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.opcoes_login a:hover {
+    text-decoration: underline;
+}
+
+
+/*==========================================
+            BOTÃO DE LOGIN
+==========================================*/
+
+.btn_login {
+   display: block;
+   width: 60px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #0d6efd;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+
+/* Hover do botão */
+
+.btn_login:hover {
+    background: #0b5ed7;
+}
+
+
+
+/* Texto abaixo do botão */
+.texto_login {
+    text-align: center;
+
+    margin-top: 20px;
+
+    color: #555;
+
+    font-size: 14px;
+}
+
+
+/* Link Cadastre-se */
+.texto_login a {
+    color: #0d6efd;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+
+/* Efeito ao passar o mouse */
+.texto_login a:hover {
+    text-decoration: underline;
+}
