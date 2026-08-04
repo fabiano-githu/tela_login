@@ -12,13 +12,15 @@
             STYLE PRINCIPAL
 ==========================================*/
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Cookie", cursive;
     background-image: url("../img/Captura de tela 2026-08-01 212613.png");
     background-repeat: no-repeat;
     background-size: cover;
-    color: #2ab5ce;
+    color: #f3fcfd;
     line-height: 1.6;
-    padding: 20px;
+    padding: 100px;
+    font-size: 20px;
+    font-weight: 400;
 }
 
 
@@ -41,7 +43,7 @@ body {
 ==========================================*/
 .container_texto_principal {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: -20px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
@@ -53,11 +55,23 @@ body {
             CONTAINER PRINCIPAL
 ==========================================*/
 .container_principal {
-    width: 50%;
-    background-color:blue;
-    border-radius: 20px;
+    width: 40%;
+    height: 450px;
+    background-color: rgb(14, 37, 87);
+    border-radius: 40px;
     margin: 0 auto;
+    margin-bottom: 200px;
 
+}
+
+.logo_login{
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    position: absolute;
+    top: px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 
@@ -68,7 +82,7 @@ body {
 /* Formulário de login */
 .formulario_login {
     width: 100%;
-    padding: 180px 20px 20px;
+    padding: 130px 20px 20px;
     position: relative;
 }
 
@@ -96,8 +110,7 @@ body {
 ==========================================*/
 
 .container_input {
-    margin-bottom: 20px;
-    border-radius: 30px;
+    margin-bottom: 5px;
 }
 
 
@@ -107,7 +120,7 @@ body {
 
 .container_input label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 0px;
     font-weight: bold;
 }
 
@@ -118,11 +131,10 @@ body {
 
 .input_com_icone {
     display: flex;
+    height: 45px;
     align-items: center;
-
-
-    border: 1px solid #14d3d3;
-    border-radius: 8px;
+    background: rgb(6, 11, 20);
+    border-radius: 30px;
 
 }
 
@@ -133,22 +145,22 @@ body {
 
 .input_com_icone input {
     flex: 1;
-
     border: none;
     outline: none;
-
-    font-size: 16px;
-
-    background:  blue;
+    font-size: 20px;
+    background: rgb(6, 11, 20);
     color: #ffffff;
-    padding: 10px;
+    padding-left: 20px;
 }
 
 
 /* Placeholder */
 
 .input_com_icone input::placeholder {
-    color: rgba(255, 255, 255, 0.8);
+
+    font-family: "Cookie", cursive;
+    color: rgba(82, 77, 77, 0.8);
+    padding-left: 5px;
 }
 
 
@@ -157,9 +169,9 @@ body {
 ==========================================*/
 
 .input_com_icone i {
-    font-size: 20px;
-    color: #f6f5fa;
-    padding: 10px;
+    font-size: 15px;
+    color: #638ba1;
+    padding: 20px;
 }
 
 
@@ -171,8 +183,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    margin: 20px 0;
+     margin: 5px 0 20px;
 }
 
 
@@ -183,9 +194,9 @@ body {
 .lembrar {
     display: flex;
     align-items: center;
-    gap: 8px;
-
+    gap: 4px;
     cursor: pointer;
+    margin-left: 20px;
 }
 
 
@@ -194,71 +205,123 @@ body {
 ==========================================*/
 
 .opcoes_login a {
-    color: #0d6efd;
+    color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
+    margin-right: 20px;
 }
 
 .opcoes_login a:hover {
-    text-decoration: underline;
+    color: #79d2ff;
+    text-decoration: none;
+}
+
+
+/* ==========================
+   BOTÃO DE LOGIN
+========================== */
+
+button {
+
+    /* Centraliza o botão */
+    margin: 0px auto;
+
+
+    /* Tamanho */
+    width: 75px;
+    height: 75px;
+
+    /* Espaçamento interno */
+    padding: 0;
+
+    /* Borda */
+    border: none;
+    border-radius: 50%;
+
+    /* Fundo */
+    background: linear-gradient(135deg,
+            #00c6ff 0%,
+            #0072ff 50%,
+            #0047b3 100%);
+
+    /* Cor da seta */
+    color: #062047;
+
+    /* Cursor */
+    cursor: pointer;
+
+    /* Centraliza o ícone */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Animação */
+    transition: all .3s ease;
+}
+
+/* Ícone */
+button i {
+    font-size: 50px;
+}
+
+/* Mouse em cima */
+button:hover {
+    background-color: #0a2855;
+    transform: scale(1.08);
+}
+
+/* Enquanto clica */
+button:active {
+    transform: scale(.95);
+}
+
+/* Quando recebe foco */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(13, 110, 253, .5);
+}
+
+/* Desabilitado */
+button:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+    opacity: .7;
 }
 
 
 /*==========================================
-            BOTÃO DE LOGIN
+            TEXTO DE CADASTRO
 ==========================================*/
 
-.btn_login {
-   display: block;
-   width: 60px;
-
-    height: 60px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #0d6efd;
-
-    color: white;
-
-    font-size: 16px;
-
-    cursor: pointer;
-    margin: 0 auto;
+.formulario_login {
+    display: flex;
+    flex-direction: column;
 }
 
-
-/* Hover do botão */
-
-.btn_login:hover {
-    background: #0b5ed7;
+.btn-login {
+    margin: 5px auto 0;
 }
 
+.container-texto {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 
-
-/* Texto abaixo do botão */
 .texto_login {
+    margin: 0;
     text-align: center;
-
-    margin-top: 20px;
-
-    color: #555;
-
-    font-size: 14px;
+    font-size: 20px;
+    font-family: "Cookie", cursive;
+    color: white;
 }
 
-
-/* Link Cadastre-se */
 .texto_login a {
-    color: #0d6efd;
-
+    color: white;
     text-decoration: none;
-
     font-weight: bold;
 }
 
-
-/* Efeito ao passar o mouse */
 .texto_login a:hover {
-    text-decoration: underline;
+    color: #79d2ff;
 }
