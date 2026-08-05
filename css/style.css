@@ -1,5 +1,16 @@
 /*==========================================
-            STYLE RESET
+            FONTES (Google Fonts)
+==========================================*/
+/* Adicione isso no <head> do HTML, antes do link do CSS:
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Cookie&display=swap" rel="stylesheet">
+
+Rajdhani = fonte "tech" única para (quase) todo o layout, no lugar da mistura
+Cookie   = mantida só como assinatura decorativa (ex: nome da marca), não espalhada
+*/
+
+/*==========================================
+            RESET DE ESTILOS
 ==========================================*/
 * {
     margin: 0;
@@ -9,18 +20,23 @@
 
 
 /*==========================================
-            STYLE PRINCIPAL
+            ESTILO PRINCIPAL (BODY)
 ==========================================*/
 body {
-    font-family: "Cookie", cursive;
-    background-image: url("../img/Captura de tela 2026-08-01 212613.png");
+
+    height: 100vh;
+    overflow: hidden; /* tira a barra de rolagem */
+    font-family: "Rajdhani", "Segoe UI", sans-serif; /* era "Cookie", cursive */
+    background-image: url("../img/images.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     color: #f3fcfd;
     line-height: 1.6;
-    padding: 100px;
+    padding: 100px 20px; /* padding lateral menor, evita espaço morto em telas médias */
     font-size: 20px;
     font-weight: 400;
+    min-height: 100vh;
 }
 
 
@@ -32,83 +48,116 @@ body {
     max-width: 1200px;
     height: 80vh;
     margin: 0 auto;
-    padding: 20px;
-    margin-top: 60px;
+    margin-top: 10px;
+    padding: 0px;
 }
-
 
 
 /*==========================================
             TEXTO PRINCIPAL
 ==========================================*/
 .container_texto_principal {
+    font-family: "Rajdhani", sans-serif; /* era Lucida Sans */
+    font-size: 10px;
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: #eef0f1; /* era #020208 (preto) — agora integra com a paleta azul/branco */
     text-align: center;
-    margin-bottom: -20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 1.2rem;
-    font-weight: bold;
-    transform: translateY(-20px);
+    text-shadow: 0 0 12px rgba(121, 210, 255, 0.35);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    margin-bottom: -110px;
 }
 
+
+/* Efeito hover premium */
+.container_texto_principal:hover {
+    color: #79d2ff;
+    transform: scale(1.08);
+    text-shadow:
+        0 0 10px rgba(13, 110, 253, 0.5),
+        0 0 20px rgba(13, 110, 253, 0.3);
+}
 
 /*==========================================
             CONTAINER PRINCIPAL
 ==========================================*/
-.container_principal {
-    width: 40%;
-    height: 450px;
-    background-color: rgb(14, 37, 87);
-    border-radius: 40px;
-    margin: 0 auto;
-    margin-bottom: 200px;
 
+.container_principal {
+    width: 30%;
+    max-width: 420px;   /* trava o crescimento em telas muito largas */
+    min-width: 320px;   /* nunca fica menor que isso — cresce em % até lá */
+    min-height: 350px;
+    margin: 0 auto 10px;
+    margin-top: 290px;
+    position: relative; /* necessário para a logo posicionada em absolute não vazar do card */
+
+    /* Vidro */
+    background: rgba(131, 206, 224, 0.08);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    /* Borda */
+    border: 1px solid rgba(240, 231, 231, 0.2);
+    border-radius: 40px;
+
+    /* Sombra */
+    box-shadow: 0 8px 32px rgba(19, 17, 17, 0.25);
+
+    /* Animação */
+    transition: all 0.4s ease;
 }
 
-.logo_login{
-    width: 200px;
+/*==========================================
+        HOVER
+==========================================*/
+
+.container_principal:hover {
+    background: rgba(13, 3, 146, 0.12);
+    border-color: rgba(133, 43, 43, 0.35);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35),
+        0 0 20px rgba(255, 255, 255, 0.15);
+
+    transform: translateY(-4px);
+}
+
+/*==========================================
+            LOGO DO LOGIN
+==========================================*/
+.logo_login {
+    width: 400px;
+    max-width: 100%; /* acompanha o card encolhendo em telas menores */
     height: auto;
     object-fit: contain;
     position: absolute;
-    top: px;
+    top: 20px;
     left: 50%;
     transform: translateX(-50%);
+    transition: transform 0.4s ease;
+}
+
+.logo_login:hover {
+    transform: translateX(-50%) translateY(-8px);
 }
 
 
 /*==========================================
             FORMULÁRIO DE LOGIN
 ==========================================*/
-
-/* Formulário de login */
 .formulario_login {
+    display: flex;
+    flex-direction: column;
     width: 100%;
     padding: 130px 20px 20px;
     position: relative;
 }
 
 
-/* Logo do formulário */
-.logo_login {
-
-    width: 300px;
-
-    height: auto;
-
-    object-fit: contain;
-
-    position: absolute;
-
-    top: 120px;
-
-    left: 50%;
-
-    transform: translateX(-50%);
-}
-
 /*==========================================
             CONTAINER DOS INPUTS
 ==========================================*/
-
 .container_input {
     margin-bottom: 5px;
 }
@@ -117,7 +166,6 @@ body {
 /*==========================================
             LABEL DOS INPUTS
 ==========================================*/
-
 .container_input label {
     display: block;
     margin-bottom: 0px;
@@ -128,38 +176,43 @@ body {
 /*==========================================
             INPUT COM ÍCONE
 ==========================================*/
-
 .input_com_icone {
     display: flex;
     height: 45px;
     align-items: center;
-    background: rgb(6, 11, 20);
+    background: rgba(255, 255, 255, 0.05); /* era rgb(6, 11, 20) — preto opaco quebrava o efeito vidro */
+    border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 30px;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
 
+.input_com_icone:focus-within {
+    border-color: rgba(121, 210, 255, 0.6);
+    background: rgba(255, 255, 255, 0.08);
 }
 
 
 /*==========================================
             INPUT
 ==========================================*/
-
 .input_com_icone input {
     flex: 1;
     border: none;
     outline: none;
-    font-size: 20px;
-    background: rgb(6, 11, 20);
-    color: #ffffff;
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif;
     padding-left: 20px;
 }
 
 
-/* Placeholder */
-
+/*==========================================
+            PLACEHOLDER
+==========================================*/
 .input_com_icone input::placeholder {
-
-    font-family: "Cookie", cursive;
-    color: rgba(82, 77, 77, 0.8);
+    font-family: "Rajdhani", sans-serif; /* era "Cookie", cursive */
+    color: rgba(255, 255, 255, 0.45);
     padding-left: 5px;
 }
 
@@ -167,10 +220,9 @@ body {
 /*==========================================
             ÍCONES
 ==========================================*/
-
 .input_com_icone i {
-    font-size: 15px;
-    color: #638ba1;
+    font-size: 14px;
+    color: #eaeee7;
     padding: 20px;
 }
 
@@ -178,34 +230,35 @@ body {
 /*==========================================
             OPÇÕES DE LOGIN
 ==========================================*/
-
 .opcoes_login {
     display: flex;
     justify-content: space-between;
     align-items: center;
-     margin: 5px 0 20px;
+    flex-wrap: wrap; /* evita sobreposição em telas estreitas */
+    gap: 8px;
+    margin: 5px 0 20px;
 }
 
 
 /*==========================================
             LEMBRAR-ME
 ==========================================*/
-
 .lembrar {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     cursor: pointer;
     margin-left: 20px;
+    font-size: 15px;
 }
 
 
 /*==========================================
             ESQUECI MINHA SENHA
 ==========================================*/
-
 .opcoes_login a {
     color: white;
+    font-size: 15px;
     text-decoration: none;
     transition: color 0.3s ease;
     margin-right: 20px;
@@ -217,15 +270,12 @@ body {
 }
 
 
-/* ==========================
-   BOTÃO DE LOGIN
-========================== */
-
+/*==========================================
+            BOTÃO DE LOGIN
+==========================================*/
 button {
-
     /* Centraliza o botão */
     margin: 0px auto;
-
 
     /* Tamanho */
     width: 75px;
@@ -259,29 +309,29 @@ button {
     transition: all .3s ease;
 }
 
-/* Ícone */
+/* Ícone do botão */
 button i {
     font-size: 50px;
 }
 
-/* Mouse em cima */
+/* Mouse em cima do botão */
 button:hover {
     background-color: #0a2855;
     transform: scale(1.08);
 }
 
-/* Enquanto clica */
+/* Enquanto clica no botão */
 button:active {
     transform: scale(.95);
 }
 
-/* Quando recebe foco */
+/* Quando o botão recebe foco */
 button:focus {
     outline: none;
     box-shadow: 0 0 10px rgba(13, 110, 253, .5);
 }
 
-/* Desabilitado */
+/* Botão desabilitado */
 button:disabled {
     background-color: #bdbdbd;
     cursor: not-allowed;
@@ -290,18 +340,16 @@ button:disabled {
 
 
 /*==========================================
-            TEXTO DE CADASTRO
+            BOTÃO DE LOGIN (POSIÇÃO)
 ==========================================*/
-
-.formulario_login {
-    display: flex;
-    flex-direction: column;
-}
-
 .btn-login {
     margin: 5px auto 0;
 }
 
+
+/*==========================================
+            TEXTO DE CADASTRO
+==========================================*/
 .container-texto {
     width: 100%;
     display: flex;
@@ -311,17 +359,99 @@ button:disabled {
 .texto_login {
     margin: 0;
     text-align: center;
-    font-size: 20px;
-    font-family: "Cookie", cursive;
+    font-size: 16px;
+    font-family: "Rajdhani", sans-serif; /* era "Cookie", cursive */
     color: white;
 }
 
 .texto_login a {
-    color: white;
+    color: #79d2ff; /* era branco puro — agora se destaca como link de fato */
     text-decoration: none;
     font-weight: bold;
 }
 
 .texto_login a:hover {
-    color: #79d2ff;
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/*==========================================
+        AUTOCOMPLETE DO CHROME
+==========================================*/
+
+.input_com_icone input:-webkit-autofill,
+.input_com_icone input:-webkit-autofill:hover,
+.input_com_icone input:-webkit-autofill:focus,
+.input_com_icone input:-webkit-autofill:active {
+
+    -webkit-text-fill-color: #ffffff !important;
+
+    -webkit-box-shadow: 0 0 0px 1000px rgba(20, 30, 45, 0.9) inset !important;
+    box-shadow: 0 0 0px 1000px rgba(20, 30, 45, 0.9) inset !important;
+
+    background-color: transparent !important;
+
+    transition: background-color 9999s ease-in-out 0s;
+}
+
+
+/*==========================================
+        RESPONSIVIDADE (novo)
+==========================================*/
+
+/* Tablets */
+@media (max-width: 768px) {
+    body {
+        padding: 60px 16px;
+    }
+
+    .container_principal {
+        width: 70%;
+    }
+
+    .container_texto_principal {
+        font-size: 26px;
+        margin-bottom: 80px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    body {
+        padding: 40px 12px;
+    }
+
+    .container_principal {
+        width: 100%;
+        min-width: 0;
+        margin-bottom: 60px;
+    }
+
+    .logo_login {
+        top: -70px;
+        width: 180px;
+    }
+
+    .formulario_login {
+        padding: 100px 16px 16px;
+    }
+
+    .container_texto_principal {
+        font-size: 22px;
+        margin-bottom: 60px;
+    }
+
+    .opcoes_login {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .lembrar {
+        margin-left: 0;
+    }
+
+    .opcoes_login a {
+        margin-right: 0;
+    }
 }
